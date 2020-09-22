@@ -11,19 +11,30 @@ const recordedChunks = [];
 // Buttons
 const videoElement = document.querySelector('video');
 
-const startBtn = document.getElementById('startBtn');
-startBtn.onclick = e => {
-  mediaRecorder.start();
-  startBtn.classList.add('is-danger');
-  startBtn.innerText = 'Recording';
+const recordBtn = document.getElementById('recordBtn');
+recordBtn.onclick = e => {
+    if(mediaRecorder.state === "recording" || mediaRecorder.state === "paused") {
+        mediaRecorder.stop();
+        recordBtn.classList.remove('is-danger');
+        recordBtn.innerText = 'Start';
+        pauseBtn.disabled = true;
+    } else {
+        mediaRecorder.start();
+        recordBtn.classList.add('is-danger');
+        recordBtn.innerText = 'Stop';
+        pauseBtn.disabled = false;
+    }
 };
 
-const stopBtn = document.getElementById('stopBtn');
-
-stopBtn.onclick = e => {
-  mediaRecorder.stop();
-  startBtn.classList.remove('is-danger');
-  startBtn.innerText = 'Start';
+const pauseBtn = document.getElementById('pauseBtn');
+pauseBtn.onclick = e => {
+    if(mediaRecorder.state === "recording") {
+        mediaRecorder.pause();
+        pauseBtn.innerText = 'Resume';
+    } else if(mediaRecorder.state === "paused") {
+        mediaRecorder.resume();
+        pauseBtn.innerText = 'Pause';
+    }
 };
 
 const videoSelectBtn = document.getElementById('videoSelectBtn');
