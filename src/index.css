@@ -4,8 +4,12 @@ body {
   margin: 0;
 }
 
-.video-container {
+#video-container {
   width: 100%;
+}
+
+.recording {
+  border: solid 3px red;
 }
 
 video {
@@ -17,4 +21,19 @@ video {
 body {
   text-align: center;
   padding-top: 20px;
+}
+
+#recordBtn, #pauseBtn {
+  height: 45px;
+  width: 90px;
+}
+
+#recordBtn {
+  border-bottom-left-radius: 90px;
+  border-top-left-radius: 90px;
+}
+
+#pauseBtn {
+  border-bottom-right-radius: 90px;
+  border-top-right-radius: 90px;
 }
