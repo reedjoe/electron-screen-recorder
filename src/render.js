@@ -26,6 +26,7 @@ recordBtn.onclick = e => {
         recordBtn.innerText = 'Start';
         pauseBtn.disabled = true;
     } else {
+        recordedChunks.length = 0;
         mediaRecorder.start();
         recordBtn.classList.add('is-danger');
         videoElement.classList.add('recording');
