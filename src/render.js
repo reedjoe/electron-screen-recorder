@@ -11,6 +11,8 @@ const recordedChunks = [];
 // Buttons
 const videoElement = document.querySelector('video');
 const videoContainer = document.getElementById('video-container');
+const videoOverlay = document.getElementById('video-overlay');
+const pauseIcon = document.getElementById('pause-icon');
 
 const videoSelectBtn = document.getElementById('videoSelectBtn');
 videoSelectBtn.onclick = getVideoSources;
@@ -37,9 +39,13 @@ pauseBtn.onclick = e => {
     if (mediaRecorder.state === "recording") {
         mediaRecorder.pause();
         pauseBtn.innerText = 'Resume';
+        videoOverlay.classList.add('video-filter');
+        pauseIcon.classList.remove('hidden');
     } else if (mediaRecorder.state === "paused") {
         mediaRecorder.resume();
         pauseBtn.innerText = 'Pause';
+        videoOverlay.classList.remove('video-filter'); 
+        pauseIcon.classList.add('hidden');
     }
 };
 

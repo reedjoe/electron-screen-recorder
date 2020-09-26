@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>Screen Recorder</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
@@ -12,13 +14,16 @@
   </head>
   <body class="content">
     <div id="video-container">
+      <div id="video-overlay">
+        <i id="pause-icon" class="far fa-pause-circle hidden"></i>
+        <div class="btn-container">
+          <button id="recordBtn" class="button is-primary">Start</button>
+          <button id="pauseBtn" class="button is-warning" disabled>Pause</button>
+        </div>
+
+      </div>
       <video></video>
     </div>
-
-    <button id="recordBtn" class="button is-primary">Start</button>
-    <button id="pauseBtn" class="button is-warning" disabled>Pause</button>
-
-    <hr />
 
     <button id="videoSelectBtn" class="button is-text">
       Choose a Video Source

@@ -1,11 +1,54 @@
-body {
+html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle, #24246e, #06051f);
+}
+
+body {
   padding: 0;
   margin: 0;
 }
 
 #video-container {
   width: 100%;
+  max-width: 1000px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.video-filter {
+  background-color: rgba(0,0,0,.7);
+}
+
+#pause-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 100px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-container {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
 }
 
 .recording {
@@ -16,6 +59,7 @@ video {
   width: 100%;
   max-width: 1000px;
   height: auto;
+  border: solid 1px rgb(27, 57, 102);
 }
 
 body {
@@ -37,3 +81,4 @@ body {
   border-bottom-right-radius: 90px;
   border-top-right-radius: 90px;
 }
+
