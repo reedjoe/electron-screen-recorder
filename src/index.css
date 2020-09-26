@@ -6,14 +6,18 @@ html {
 body {
   padding: 0;
   margin: 0;
+  height: 100vh;
+  text-align: center;
 }
 
 #video-container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1080px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #video-overlay {
@@ -27,6 +31,20 @@ body {
 
 .video-filter {
   background-color: rgba(0,0,0,.7);
+}
+
+#videoSelectBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  max-width: 20%;
+  background-color: #f5f5f5;
+  color: #363636;
+  box-shadow: 0 0 0 0.125em rgba(50,115,220,.25);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #pause-icon {
@@ -57,14 +75,9 @@ body {
 
 video {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1080px;
   height: auto;
   border: solid 1px rgb(27, 57, 102);
-}
-
-body {
-  text-align: center;
-  padding-top: 20px;
 }
 
 #recordBtn, #pauseBtn {
