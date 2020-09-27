@@ -29,6 +29,7 @@ recordBtn.onclick = e => {
         videoElement.classList.remove('recording');
         recordBtn.innerText = 'Start';
         pauseBtn.disabled = true;
+        videoSelectBtn.disabled = false;
     } else {
         recordedChunks.length = 0;
         mediaRecorder.start();
@@ -36,6 +37,7 @@ recordBtn.onclick = e => {
         videoElement.classList.add('recording');
         recordBtn.innerText = 'Stop';
         pauseBtn.disabled = false;
+        videoSelectBtn.disabled = true;
     }
 };
 
