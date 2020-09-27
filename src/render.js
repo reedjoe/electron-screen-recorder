@@ -20,6 +20,10 @@ videoSelectBtn.onclick = getVideoSources;
 const recordBtn = document.getElementById('recordBtn');
 recordBtn.onclick = e => {
     if (mediaRecorder.state === "recording" || mediaRecorder.state === "paused") {
+        if (mediaRecorder.state === "paused") {
+            videoOverlay.classList.remove('video-filter'); 
+            pauseIcon.classList.add('hidden');
+        }
         mediaRecorder.stop();
         recordBtn.classList.remove('is-danger');
         videoElement.classList.remove('recording');
